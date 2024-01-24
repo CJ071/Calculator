@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the calculator horizontally */
+}
+
+.calculator {
+  height: 500px;
+  width: 400px;
+  border-radius: 8px;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.output {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input,
+.result {
+  color: #fff;
+  font-size: 32px;
+}
+
+.result {
+  font-size: 24px;
+}
+
+.keys {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+}
+
+button {
+  border: none;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #505050;
+}
+
+button:active {
+  background-color: #404040;
+}
+
+button.operator {
+  background-color: #ff8c00;
+  color: #fff;
+}
+
+button.operator:hover {
+  background-color: #e07c00;
+}
+
+button.double {
+  grid-column: span 2;
+}
+
+button.clear {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+button.clear:hover {
+  background-color: #c82333;
+}
