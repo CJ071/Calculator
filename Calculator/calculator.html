@@ -5,98 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 </head>
-<body>
 
-    <p>
+<p>
         
     <button
+    value="1"
     onclick="
-    calculation+='1'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >1</button>
 
     <button
+    value="2"
     onclick="
-    calculation+='2'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >2</button>
 
     <button
+    value="3"
     onclick="
-    calculation+='3'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >3</button>
-    </p>
+
+    <button
+    value=" + "
+    onclick="
+    updateCalculation(this.value)
+    "
+    >+</button>
+
+</p>
 
 
-    <p>
+<p>
         
     <button
+    value="4"
     onclick="
-    calculation+='4'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >4</button>
 
     <button
+    value="5"
     onclick="
-    calculation+='5'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >5</button>
 
     <button
+    value="6"
     onclick="
-    calculation+='6'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >6</button>
-    </p>
 
+    <button
+    value=" - "
+    onclick="
+    updateCalculation(this.value)
+    "
+    >-</button>
 
-    <p>
+</p>
+
+<p>
         
     <button
+    value="7"
     onclick="
-    calculation+='7'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >7</button>
 
     <button
+    value="8"
     onclick="
-    calculation+='8'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >8</button>
 
     <button
+    value="9"
     onclick="
-    calculation+='9'
-    console.log(calculation)
+    updateCalculation(this.value)
     "
     >9</button>
-    </p>
 
     <button
+    value="*"
     onclick="
-    calculation+=' +' 
-    console.log(calculation)
+    updateCalculation(this.value)
     "
-    >+</button>
+    >*</button>
+
+</p>
+
+<p>
 
     <button
+    value="0"
     onclick="
-    calculation=eval(calculation)
-    console.log(calculation)
+    updateCalculation(this.value)
+    "
+    >0</button>
+    
+    <button
+    value="."
+    onclick="
+    updateCalculation(this.value)
+    "
+    >.</button>
+
+    <button
+      value="="
+    onclick="
+    updateCalculation(this.value)
     "
     >=</button>
 
+    <button
+    value=" / "
+    onclick="
+    updateCalculation(this.value)
+    "
+    >/</button>
+
+</p>
+
+<p>
+    <button
+    value="Clear"
+    onclick="
+    updateCalculation(this.value)
+    "
+    >Clear</button>
+</p>
+
     <script>
-        let calculation=''
+        let calculation=localStorage.getItem('calculation') || ''
+
+        function updateCalculation(buttonValue)
+        {
+            if(buttonValue==='Clear')
+            {
+                calculation=''
+                alert('Cleared')
+            }
+            else if(buttonValue==='=')
+            {
+                calculation=eval(calculation)
+                alert(calculation)
+            }
+            else if(typeof parseInt(buttonValue)==="number"){
+                calculation+=buttonValue
+            }
+            localStorage.setItem('calculation',calculation)
+            console.log(calculation)
+        }
     </script>
 
 </body>
