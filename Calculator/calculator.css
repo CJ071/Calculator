@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#clear{
+    font-size: small;
+}
+.button{
+background-color: gray;
+border: none;
+font-size: 22px;
+width: 45px;
+height: 45px;
+border-radius: 150px;
+}
+
+p,button{
+    color: white;
+}
+.show-calculation{
+    font-size: 32px;
+    width: 50px;
+    margin: 0;
+}
+
+.operator-color{
+    background-color:orange;
+}
+
+.container{
+    border: 3px solid blueviolet;
+    border-radius: 4px;
+    padding: 9px;
+    display: inline-block;
+}

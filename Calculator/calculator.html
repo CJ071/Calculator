@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
 </head>
+
+<div class="container">
 
 <p class="show-calculation" ></p>
 
 <p>
         
-    <button
+  <button class="button"
     value="1"
     onclick="
     updateCalculation(this.value)
     "
     >1</button>
 
-    <button
+  <button class="button"
     value="2"
     onclick="
     updateCalculation(this.value)
     "
     >2</button>
 
-    <button
+  <button class="button"
     value="3"
     onclick="
     updateCalculation(this.value)
     "
     >3</button>
 
-    <button
+  <button class="button operator-color"
     value=" + "
     onclick="
     updateCalculation(this.value)
@@ -43,28 +46,28 @@
 
 <p>
         
-    <button
+  <button class="button"
     value="4"
     onclick="
     updateCalculation(this.value)
     "
     >4</button>
 
-    <button
+  <button class="button"
     value="5"
     onclick="
     updateCalculation(this.value)
     "
     >5</button>
 
-    <button
+  <button class="button"
     value="6"
     onclick="
     updateCalculation(this.value)
     "
     >6</button>
 
-    <button
+  <button class="button operator-color"
     value=" - "
     onclick="
     updateCalculation(this.value)
@@ -75,28 +78,28 @@
 
 <p>
         
-    <button
+  <button class="button"
     value="7"
     onclick="
     updateCalculation(this.value)
     "
     >7</button>
 
-    <button
+  <button class="button"
     value="8"
     onclick="
     updateCalculation(this.value)
     "
     >8</button>
 
-    <button
+  <button class="button"
     value="9"
     onclick="
     updateCalculation(this.value)
     "
     >9</button>
 
-    <button
+  <button class="button operator-color"
     value="*"
     onclick="
     updateCalculation(this.value)
@@ -107,28 +110,28 @@
 
 <p>
 
-    <button
+  <button class="button"
     value="0"
     onclick="
     updateCalculation(this.value)
     "
     >0</button>
     
-    <button
+  <button class="button"
     value="."
     onclick="
     updateCalculation(this.value)
     "
     >.</button>
 
-    <button
+  <button class="button"
       value="="
     onclick="
     updateCalculation(this.value)
     "
     >=</button>
 
-    <button
+  <button class="button operator-color"
     value=" / "
     onclick="
     updateCalculation(this.value)
@@ -138,7 +141,8 @@
 </p>
 
 <p>
-    <button
+  <button class="button"
+  id="clear"
     value="Clear"
     onclick="
     updateCalculation(this.value)
@@ -146,30 +150,9 @@
     >Clear</button>
 </p>
 
-    <script>
-        let calculation=localStorage.getItem('calculation') || ''
-        const showCalculation=document.querySelector('.show-calculation')
-        showCalculation.innerHTML=calculation
-        function updateCalculation(buttonValue)
-        {
+</div>
 
-            if(buttonValue==='Clear')
-            {
-                calculation=''
-                showCalculation.innerHTML=''
-            }
-            else if(buttonValue==='=')
-            {
-                calculation=eval(calculation)
-            }
-            else if(typeof parseInt(buttonValue)==="number"){
-                calculation+=buttonValue
-            }
-            localStorage.setItem('calculation',calculation)
-            calculation?showCalculation.innerHTML=calculation:calculation
-            console.log(calculation)
-        }
-       
+    <script src="calculator.js">
     </script>
 
 </body>
